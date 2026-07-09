@@ -1,4 +1,5 @@
 site_name: 硬件产品经理知识库
+site_url: https://urchinqm.github.io/hardware-product-manager-wiki/
 theme:
   name: material
   language: zh
@@ -38,7 +39,8 @@ markdown_extensions:
   - pymdownx.details
 nav:
   - 00_Index:
-      - 首页: 00_Index/index.md
+      - 首页: index.md
+      - 知识库索引: 00_Index/index.md
       - Getting Started: 00_Index/Getting_Started.md
   - 01_Hardware:
       - MCU: 01_Hardware/MCU.md

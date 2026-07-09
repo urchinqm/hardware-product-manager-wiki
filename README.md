@@ -83,6 +83,28 @@ mkdocs build
 2. 内部服务器：将 `site` 目录上传到 Nginx、Apache 或对象存储静态站点。
 3. 文档平台：把 `site` 目录作为静态资源目录部署。
 
+## GitHub Pages 自动发布
+
+本项目已配置 GitHub Actions 工作流：
+
+```text
+.github/workflows/deploy-pages.yml
+```
+
+每次推送到 `main` 分支后，GitHub 会自动安装依赖、执行 `mkdocs build --strict`，并将生成的 `site` 目录发布到 GitHub Pages。
+
+仓库需要在 GitHub 网页中设置一次：
+
+1. 进入仓库 `Settings`。
+2. 打开 `Pages`。
+3. 将 `Build and deployment` 的 `Source` 设置为 `GitHub Actions`。
+
+发布后网站地址：
+
+```text
+https://urchinqm.github.io/hardware-product-manager-wiki/
+```
+
 如果使用 GitHub Pages，可以在本地执行：
 
 ```bash
