@@ -1,51 +1,98 @@
 site_name: 硬件产品经理知识库
 theme:
   name: material
+  language: zh
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
+    - search.highlight
+    - search.suggest
+  palette:
+    - scheme: default
+      primary: blue grey
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: 切换到暗色模式
+    - scheme: slate
+      primary: blue grey
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到浅色模式
 plugins:
-  - search
+  - search:
+      lang: zh
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.details
 nav:
-  - 首页: 00_Index/index.md
-  - 硬件:
+  - 00_Index:
+      - 首页: 00_Index/index.md
+      - Getting Started: 00_Index/Getting_Started.md
+  - 01_Hardware:
       - MCU: 01_Hardware/MCU.md
       - SoC: 01_Hardware/SoC.md
       - MPU: 01_Hardware/MPU.md
       - PMIC: 01_Hardware/PMIC.md
-  - 存储:
+  - 02_Storage:
       - Flash: 02_Storage/Flash.md
       - NAND: 02_Storage/NAND.md
       - NOR: 02_Storage/NOR.md
       - eMMC: 02_Storage/eMMC.md
       - UFS: 02_Storage/UFS.md
       - SD Card: 02_Storage/SD_Card.md
-  - 通信:
+  - 03_Communication:
+      - Bluetooth Classic: 03_Communication/Bluetooth_Classic.md
+      - BLE: 03_Communication/BLE.md
+      - WiFi: 03_Communication/WiFi.md
+      - AP Mode: 03_Communication/AP_Mode.md
+      - Hotspot: 03_Communication/Hotspot.md
+      - 4G: 03_Communication/4G.md
+      - 5G: 03_Communication/5G.md
       - UART: 03_Communication/UART.md
       - SPI: 03_Communication/SPI.md
       - I2C: 03_Communication/I2C.md
       - CAN: 03_Communication/CAN.md
       - USB: 03_Communication/USB.md
-  - 传感器:
+  - 04_Sensor:
       - GPS: 04_Sensor/GPS.md
       - GNSS: 04_Sensor/GNSS.md
       - IMU: 04_Sensor/IMU.md
       - GSensor: 04_Sensor/GSensor.md
       - Gyroscope: 04_Sensor/Gyroscope.md
-  - 操作系统:
+      - Compass: 04_Sensor/Compass.md
+      - Magnetometer: 04_Sensor/Magnetometer.md
+      - Barometer: 04_Sensor/Barometer.md
+  - 05_OS:
       - Linux: 05_OS/Linux.md
       - Android: 05_OS/Android.md
+      - Windows IoT: 05_OS/Windows_IoT.md
       - RTOS: 05_OS/RTOS.md
       - QNX: 05_OS/QNX.md
-  - 功能:
+  - 06_Function:
       - OTA: 06_Function/OTA.md
       - Login: 06_Function/Login.md
       - Device Binding: 06_Function/Device_Binding.md
       - Network State: 06_Function/Network_State.md
-  - PRD:
+      - Factory Reset: 06_Function/Factory_Reset.md
+      - Firmware Upgrade: 06_Function/Firmware_Upgrade.md
+  - 07_PRD:
       - Requirement Template: 07_PRD/Requirement_Template.md
       - State Machine: 07_PRD/State_Machine.md
       - Exception Design: 07_PRD/Exception_Design.md
       - Test Case Template: 07_PRD/Test_Case_Template.md
-  - 项目案例:
+  - 08_Project_Case:
       - Motorcycle: 08_Project_Case/Motorcycle.md
       - Car Head Unit: 08_Project_Case/Car_Head_Unit.md
       - Dashcam: 08_Project_Case/Dashcam.md
-
