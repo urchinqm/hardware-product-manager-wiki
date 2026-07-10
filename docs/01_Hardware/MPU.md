@@ -1,25 +1,59 @@
 # MPU
 
-## 1. 基础定义
+## 1. 基本概念
 
-包含：
-- 英文全称
-- 中文解释
-- 是什么
+[COMMON] MPU（Microprocessor Unit，微处理器单元，主要集成 CPU 计算核心并依赖外部内存和外设构建系统的处理器）常用于需要 Linux（类 Unix 开源操作系统内核和生态）或 Android（基于 Linux 内核的移动和嵌入式操作系统）运行环境的设备。
+
+[COMMON] MMU（Memory Management Unit，内存管理单元，用于虚拟内存和进程隔离的硬件单元）是很多 MPU 支持复杂操作系统的关键能力。
 
 ## 2. 工作原理
 
-## 3. 关键参数
+[COMMON] MPU 上电后通常由 Boot ROM（芯片内置启动代码）加载 Bootloader（引导加载程序，用于初始化硬件并加载操作系统），再启动 Kernel（内核，操作系统核心）和用户空间应用。
 
-## 4. 与类似技术区别
+[COMMON] MPU 系统通常需要外部 DRAM（Dynamic Random Access Memory，动态随机存取存储器）和非易失性存储，如 eMMC（embedded MultiMediaCard，嵌入式多媒体卡）或 UFS（Universal Flash Storage，通用闪存存储）。
 
-## 5. 应用场景
+## 3. 核心参数
 
-## 6. 产品经理关注点
+[COMMON] 关键参数包括 CPU 架构、核心数、主频、内存类型和容量、显示接口、摄像头接口、USB、PCIe（Peripheral Component Interconnect Express，高速串行扩展总线）、以太网、AI 加速器、视频编解码能力、功耗、封装和工作温度。
 
-## 7. PRD需要定义内容
+[COMMON] 软件参数包括 BSP（Board Support Package，板级支持包）、内核版本、驱动支持、启动时间、升级机制和长期维护周期。
 
-## 8. 异常状态
+## 4. 参数影响
 
-## 9. 测试关注点
+[COMMON] 核心数和主频影响并发任务和应用响应；DRAM 容量影响多进程、图形和缓存能力；视频编解码能力影响摄像头和屏幕产品；接口数量影响整机扩展。
 
+[COMMON] MPU vs MCU 的核心差异是 MPU 更适合复杂应用和操作系统生态，MCU 更适合低功耗和确定性控制。
+
+## 5. 优点
+
+[COMMON] MPU 支持复杂 UI、网络协议栈、多进程应用、多媒体处理和高层开发框架。
+
+[COMMON] MPU 适合需要应用生态、文件系统、网络服务和图形显示的产品。
+
+## 6. 局限性
+
+[COMMON] MPU 系统复杂度、功耗、启动时间、BOM（Bill of Materials，物料清单）成本和软件维护成本通常高于 MCU。
+
+[COMMON] MPU 依赖外部内存和电源时序，硬件设计和系统调试风险更高。
+
+## 7. 产品经理关注点
+
+[COMMON] 产品经理应确认是否真的需要复杂操作系统、屏幕、多媒体、应用生态或高带宽网络。
+
+[COMMON] 如果只是低功耗控制或简单外设管理，选择 MPU 可能导致过度设计。
+
+## 8. 常见应用场景
+
+[COMMON] MPU 常用于车机、工业 HMI（Human-Machine Interface，人机界面）、网关、摄像头、智能音箱、机器人主控和带屏 IoT 设备。
+
+## 9. 需求文档需要明确内容
+
+[COMMON] 需求文档需要明确操作系统、启动时间、休眠唤醒、显示分辨率、外设接口、网络协议、存储容量、日志策略、升级策略和安全启动要求。
+
+[COMMON] 对 MPU 产品，PRD 还应明确系统异常后的用户可见行为，如黑屏、卡 Logo、应用崩溃和系统恢复。
+
+## 10. 异常状态设计
+
+[COMMON] MPU 异常状态包括 Bootloader 启动失败、Kernel panic（内核严重错误）、文件系统损坏、应用崩溃、驱动加载失败、内存不足、存储满和升级失败。
+
+[COMMON] 关键产品必须设计 Recovery Mode（恢复模式，用于系统异常后修复或重刷系统的模式）。
