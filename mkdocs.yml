@@ -98,3 +98,7 @@ nav:
       - Motorcycle: 08_Project_Case/Motorcycle.md
       - Car Head Unit: 08_Project_Case/Car_Head_Unit.md
       - Dashcam: 08_Project_Case/Dashcam.md
+  - 09_Connector:
+      - USB Connector: 09_Connector/USB_Connector.md
+      - USB Type-C: 09_Connector/USB_Type_C.md
+      - RCA Connector: 09_Connector/RCA_Connector.md
