@@ -2,58 +2,58 @@
 
 ## 1. 基本概念
 
-[COMMON] NAND Flash（与非型闪存，一种适合大容量数据存储的非易失性闪存）常用于系统镜像、媒体文件、日志和用户数据存储。
+NAND Flash（与非型闪存，一种适合大容量数据存储的非易失性闪存）常用于系统镜像、媒体文件、日志和用户数据存储。
 
-[COMMON] Raw NAND（裸 NAND，需要主控或软件处理坏块、纠错和磨损均衡的 NAND）和 Managed NAND（托管 NAND，内部集成控制器管理闪存的 NAND）是产品选型中必须区分的概念。
+Raw NAND（裸 NAND，需要主控或软件处理坏块、纠错和磨损均衡的 NAND）和 Managed NAND（托管 NAND，内部集成控制器管理闪存的 NAND）是产品选型中必须区分的概念。
 
 ## 2. 工作原理
 
-[COMMON] NAND Flash 按 Page（页，读写基本单位）读写，按 Block（块，擦除基本单位）擦除。
+NAND Flash 按 Page（页，读写基本单位）读写，按 Block（块，擦除基本单位）擦除。
 
-[COMMON] NAND Flash 天然存在 Bad Block（坏块，不能可靠保存数据的块），系统需要 ECC（Error Correction Code，错误纠正码）和 Wear Leveling（磨损均衡，让写入分散到不同块以延长寿命）。
+NAND Flash 天然存在 Bad Block（坏块，不能可靠保存数据的块），系统需要 ECC（Error Correction Code，错误纠正码）和 Wear Leveling（磨损均衡，让写入分散到不同块以延长寿命）。
 
 ## 3. 核心参数
 
-[COMMON] 核心参数包括容量、接口、页大小、块大小、顺序读写速度、随机读写性能、P/E Cycle（Program/Erase Cycle，编程/擦除循环寿命）、数据保持时间、ECC 要求、坏块率和温度等级。
+核心参数包括容量、接口、页大小、块大小、顺序读写速度、随机读写性能、P/E Cycle（Program/Erase Cycle，编程/擦除循环寿命）、数据保持时间、ECC 要求、坏块率和温度等级。
 
-[COMMON] Cell 类型包括 SLC（Single-Level Cell，单层单元）、MLC（Multi-Level Cell，多层单元）、TLC（Triple-Level Cell，三层单元）和 QLC（Quad-Level Cell，四层单元）。
+Cell 类型包括 SLC（Single-Level Cell，单层单元）、MLC（Multi-Level Cell，多层单元）、TLC（Triple-Level Cell，三层单元）和 QLC（Quad-Level Cell，四层单元）。
 
 ## 4. 参数影响
 
-[COMMON] 容量影响可存储数据量；顺序写速度影响录像和大文件写入；随机写性能影响数据库和小文件；P/E Cycle 影响寿命；ECC 要求影响主控选型。
+容量影响可存储数据量；顺序写速度影响录像和大文件写入；随机写性能影响数据库和小文件；P/E Cycle 影响寿命；ECC 要求影响主控选型。
 
-[COMMON] SLC 通常强调耐久性和可靠性，TLC/QLC 通常强调容量密度；具体指标必须以器件规格书为准。
+SLC 通常强调耐久性和可靠性，TLC/QLC 通常强调容量密度；具体指标必须以器件规格书为准。
 
 ## 5. 优点
 
-[COMMON] NAND Flash 适合大容量存储，单位容量成本通常低于 NOR Flash。
+NAND Flash 适合大容量存储，单位容量成本通常低于 NOR Flash。
 
-[COMMON] NAND Flash 可支持系统镜像、用户数据、媒体文件和缓存等大容量场景。
+NAND Flash 可支持系统镜像、用户数据、媒体文件和缓存等大容量场景。
 
 ## 6. 局限性
 
-[COMMON] 裸 NAND 管理复杂，需要坏块管理、ECC、磨损均衡和文件系统配合。
+裸 NAND 管理复杂，需要坏块管理、ECC、磨损均衡和文件系统配合。
 
-[COMMON] 掉电、频繁写入和高温会增加数据可靠性设计压力。
+掉电、频繁写入和高温会增加数据可靠性设计压力。
 
 ## 7. 产品经理关注点
 
-[COMMON] 产品经理必须明确写入模型：连续录像、周期日志、用户文件、系统升级还是数据库。
+产品经理必须明确写入模型：连续录像、周期日志、用户文件、系统升级还是数据库。
 
-[COMMON] NAND Flash vs eMMC/UFS 的差异是后者集成控制器和标准接口，能降低主机侧管理复杂度。
+NAND Flash vs eMMC/UFS 的差异是后者集成控制器和标准接口，能降低主机侧管理复杂度。
 
 ## 8. 常见应用场景
 
-[COMMON] NAND Flash 常用于摄像头录像、系统分区、离线地图、日志缓存、音乐图片存储和工业数据记录。
+NAND Flash 常用于摄像头录像、系统分区、离线地图、日志缓存、音乐图片存储和工业数据记录。
 
 ## 9. 需求文档需要明确内容
 
-[COMMON] PRD 需要明确容量、用户可用空间、写入速率、保存周期、覆盖策略、掉电保护、文件系统、坏块处理和寿命提示。
+PRD 需要明确容量、用户可用空间、写入速率、保存周期、覆盖策略、掉电保护、文件系统、坏块处理和寿命提示。
 
-[COMMON] 如果有循环录像，必须定义单文件时长、保留策略、锁定文件、满盘覆盖和异常断电后的修复。
+如果有循环录像，必须定义单文件时长、保留策略、锁定文件、满盘覆盖和异常断电后的修复。
 
 ## 10. 异常状态设计
 
-[COMMON] NAND Flash 异常状态包括坏块增加、ECC 超限、写入失败、文件系统损坏、空间不足、寿命耗尽和掉电导致数据不一致。
+NAND Flash 异常状态包括坏块增加、ECC 超限、写入失败、文件系统损坏、空间不足、寿命耗尽和掉电导致数据不一致。
 
-[COMMON] 产品应设计只读降级、数据修复、格式化提示和日志导出。
+产品应设计只读降级、数据修复、格式化提示和日志导出。
